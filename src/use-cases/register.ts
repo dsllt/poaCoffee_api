@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma"
+import { UserRepository } from "@/repositories/users-repository"
 import { hash } from "bcryptjs"
 
 interface RegisterUseCaseProps {
@@ -8,7 +9,7 @@ interface RegisterUseCaseProps {
 }
 
 export class RegisterUseCase {
-  constructor (private userRepository: any) {}
+  constructor (private userRepository: UserRepository) {}
   async register({name, email, password}: RegisterUseCaseProps) {
     const userWithEmail = await prisma.user.findUnique({
       where: {

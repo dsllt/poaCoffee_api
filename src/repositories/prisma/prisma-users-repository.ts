@@ -1,7 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
+import { UserRepository } from "../users-repository";
 
-export class PrismaUsersRepository {
+export class PrismaUsersRepository implements UserRepository{
   async create(data: Prisma.UserCreateInput){
     const user = await prisma.user.create({ data })
 

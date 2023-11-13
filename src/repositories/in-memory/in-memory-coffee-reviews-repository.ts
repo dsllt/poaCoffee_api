@@ -6,14 +6,14 @@ export class InMemoryCoffeeReviewsRepository
 {
   public items: Review[] = []
 
-  async create(data: Prisma.ReviewCreateInput) {
+  async create(data: Prisma.ReviewUncheckedCreateInput) {
     const review = {
       id: 'review-1',
       description: data.description,
       rating: data.rating,
       created_at: new Date(),
-      user: data.user,
-      coffee: data.coffee,
+      userId: data.userId,
+      coffeeId: data.coffeeId,
     }
     this.items.push(review)
 

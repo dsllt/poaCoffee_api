@@ -3,7 +3,7 @@ import { Prisma } from '@prisma/client'
 import { CoffeeReviewsRepository } from '../coffee-reviews-repository'
 
 export class PrismaCoffeeReviewsRepository implements CoffeeReviewsRepository {
-  async create(data: Prisma.ReviewCreateInput) {
+  async create(data: Prisma.ReviewUncheckedCreateInput) {
     const review = await prisma.review.create({ data })
 
     return review

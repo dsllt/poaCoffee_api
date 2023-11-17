@@ -10,8 +10,8 @@ Coffee locator application.
 - [x] Deve ser possível o usuário fazer review de um café;
 - [x] Deve ser possível o adminsitrador cadastrar um café;
 
-- [ ] Deve ser possível o visualizar todos cafés;
-- [ ] Deve ser possível o buscar cafés pelo nome;
+- [x] Deve ser possível o visualizar todos cafés;
+- [x] Deve ser possível o buscar cafés pelo nome;
 
 ## RNs (Regras de negócio)
 

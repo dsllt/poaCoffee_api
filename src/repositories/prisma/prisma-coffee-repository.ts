@@ -28,4 +28,10 @@ export class PrismaCoffeesRepository implements CoffeesRepository {
 
     return coffee
   }
+
+  async findAll() {
+    const coffees = await prisma.coffee.findMany()
+
+    return coffees
+  }
 }

@@ -40,4 +40,14 @@ export class InMemoryCoffeesRepository implements CoffeesRepository {
     
     return coffee
   }
+
+  async findAll() {
+    const coffees = this.items
+    
+    if (!coffees) {
+      return null
+    }
+    
+    return coffees
+  }
 }

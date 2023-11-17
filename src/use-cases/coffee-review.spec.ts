@@ -20,7 +20,6 @@ describe('Coffee Review Use Case', () => {
       userId: 'user-01',
       coffeeId: 'coffee-01',
     })
-    console.log(review)
     expect(review.id).toEqual(expect.any(String))
   })
 

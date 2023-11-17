@@ -7,6 +7,7 @@ interface RegisterUseCaseProps {
   name: string
   email: string
   password: string
+  isAdmin?: boolean
 }
 interface RegisterUseCaseResponse {
   user: User
@@ -17,6 +18,7 @@ export class RegisterUseCase {
     name,
     email,
     password,
+    isAdmin
   }: RegisterUseCaseProps): Promise<RegisterUseCaseResponse> {
     const userWithSameEmail = await this.usersRepository.findByEmail(email)
 
@@ -30,6 +32,7 @@ export class RegisterUseCase {
       name,
       email,
       password_hash,
+      isAdmin
     })
 
     return { user }

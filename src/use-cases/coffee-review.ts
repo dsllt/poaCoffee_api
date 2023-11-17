@@ -5,7 +5,7 @@ import { NotAuthenticatedUserError } from './errors/user-not-authenticated-error
 
 interface CoffeeReviewUseCaseProps {
   description: string
-  rating: Decimal
+  rating: Decimal | number | string
   userId: string
   coffeeId: string
 }

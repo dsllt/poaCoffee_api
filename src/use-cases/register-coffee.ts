@@ -1,6 +1,6 @@
 import { Coffee } from '@prisma/client'
 import { Decimal } from '@prisma/client/runtime/library'
-import { CoffeeRepository } from '@/repositories/coffee-repository'
+import { CoffeesRepository } from '@/repositories/coffee-repository'
 import { InvalidCredentialsError } from './errors/invalid-credentials-error'
 
 interface RegisterCoffeeUseCaseProps {
@@ -16,7 +16,7 @@ interface RegisterCoffeeUseCaseResponse {
   coffee: Coffee
 }
 export class RegisterCoffeeUseCase {
-  constructor(private coffeesRepository: CoffeeRepository) {}
+  constructor(private coffeesRepository: CoffeesRepository) {}
   async execute({
     name,
     description,

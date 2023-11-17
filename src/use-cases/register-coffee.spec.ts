@@ -1,17 +1,17 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { CoffeeRepository } from '@/repositories/coffee-repository'
-import { InMemoryCoffeeRepository } from '@/repositories/in-memory/in-memory-coffee-repository'
+import { CoffeesRepository } from '@/repositories/coffee-repository'
+import { InMemoryCoffeesRepository } from '@/repositories/in-memory/in-memory-coffee-repository'
 import { RegisterCoffeeUseCase } from './register-coffee'
 import { Prisma } from '@prisma/client'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 import { AuthenticateUseCase } from './authenticate'
 import { hash } from 'bcryptjs'
 
-let coffeesRepository: CoffeeRepository
+let coffeesRepository: CoffeesRepository
 let sut: RegisterCoffeeUseCase
 describe('Register Coffee Use Case', () => {
   beforeEach(() => {
-    coffeesRepository = new InMemoryCoffeeRepository()
+    coffeesRepository = new InMemoryCoffeesRepository()
     sut = new RegisterCoffeeUseCase(coffeesRepository)
   })
 

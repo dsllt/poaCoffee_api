@@ -1,8 +1,8 @@
 import { prisma } from '@/lib/prisma'
 import { Prisma } from '@prisma/client'
-import { CoffeeRepository } from '../coffee-repository'
+import { CoffeesRepository } from '../coffee-repository'
 
-export class PrismaCoffeeRepository implements CoffeeRepository {
+export class PrismaCoffeesRepository implements CoffeesRepository {
   async create(data: Prisma.CoffeeCreateInput) {
     const coffee = await prisma.coffee.create({ data })
 
@@ -13,6 +13,16 @@ export class PrismaCoffeeRepository implements CoffeeRepository {
     const coffee = await prisma.coffee.findUnique({
       where: {
         id: coffeeId,
+      },
+    })
+
+    return coffee
+  }
+  
+  async findByName(coffeeName: string) {
+    const coffee = await prisma.coffee.findFirst({
+      where: {
+        name: coffeeName,
       },
     })
 

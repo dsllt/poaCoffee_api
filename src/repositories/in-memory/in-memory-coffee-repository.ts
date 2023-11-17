@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Coffee, Prisma } from '@prisma/client'
-import { CoffeeRepository } from '../coffee-repository'
+import { CoffeesRepository } from '../coffee-repository'
 
-export class InMemoryCoffeeRepository implements CoffeeRepository {
+export class InMemoryCoffeesRepository implements CoffeesRepository {
   public items: Coffee[] = []
 
   async create(data: Prisma.CoffeeCreateInput) {
@@ -28,6 +28,16 @@ export class InMemoryCoffeeRepository implements CoffeeRepository {
       return null
     }
 
+    return coffee
+  }
+
+  async findByName(coffeeName: string) {
+    const coffee = this.items.find((item) => item.name === coffeeName)
+    
+    if (!coffee) {
+      return null
+    }
+    
     return coffee
   }
 }

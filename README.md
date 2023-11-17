@@ -13,12 +13,16 @@ Coffee locator application.
 - [x] Deve ser possível o visualizar todos cafés;
 - [x] Deve ser possível o buscar cafés pelo nome;
 
+- [ ] Deve ser possível o adicionar tipos de café à um café;
+- [ ] Deve ser possível o adicionar comidas à um café;
+// Analisar a o que já foi produzido na interface para ver como fazer essa requisição
+
 ## RNs (Regras de negócio)
 
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
 - [x] Apenas usuários logados podem fazer review;
 - [x] Apenas adminsitradores podem cadastrar cafés;
-- [ ] Cafés precisam ter nome, endereço, descrição do local, lista de métodos e tipos de cafés oferecidos, e lista das 5 principais comidas ;
+- [x] Cafés precisam ter nome, endereço, descrição do local, lista de métodos e tipos de cafés oferecidos, e lista das 5 principais comidas ;
 
 
 ## RNFs (Requisitos não-funcionais)

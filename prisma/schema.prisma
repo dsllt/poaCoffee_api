@@ -33,7 +33,9 @@ model Coffee {
   longitude   Decimal
   created_at  DateTime @default(now())
 
-  Review Review[]
+  Review     Review[]
+  CoffeeType CoffeeType[]
+  Food       Food[]
 
   @@map("coffees")
 }
@@ -51,4 +53,28 @@ model Review {
   coffeeId String
 
   @@map("reviews")
+}
+
+model CoffeeType {
+  id          String  @id @default(uuid())
+  name        String
+  description String?
+  image       String?
+
+  coffee   Coffee @relation(fields: [coffeeId], references: [id])
+  coffeeId String
+
+  @@map("coffeeTypes")
+}
+
+model Food {
+  id          String  @id @default(uuid())
+  name        String
+  description String?
+  image       String?
+
+  coffee   Coffee @relation(fields: [coffeeId], references: [id])
+  coffeeId String
+
+  @@map("foods")
 }

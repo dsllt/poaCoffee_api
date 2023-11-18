@@ -18,7 +18,7 @@ export class RegisterUseCase {
     name,
     email,
     password,
-    isAdmin
+    isAdmin,
   }: RegisterUseCaseProps): Promise<RegisterUseCaseResponse> {
     const userWithSameEmail = await this.usersRepository.findByEmail(email)
 
@@ -32,7 +32,7 @@ export class RegisterUseCase {
       name,
       email,
       password_hash,
-      isAdmin
+      isAdmin,
     })
 
     return { user }

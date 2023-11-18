@@ -8,6 +8,7 @@ interface RegisterCoffeeUseCaseProps {
   description?: string
   phone?: string
   address: string
+  image: string
   latitude: Decimal
   longitude: Decimal
   isAdmin: boolean
@@ -24,10 +25,9 @@ export class RegisterCoffeeUseCase {
     address,
     latitude,
     longitude,
-    isAdmin
+    isAdmin,
   }: RegisterCoffeeUseCaseProps): Promise<RegisterCoffeeUseCaseResponse> {
-    
-    if (!isAdmin){
+    if (!isAdmin) {
       throw new InvalidCredentialsError()
     }
     const coffee = await this.coffeesRepository.create({

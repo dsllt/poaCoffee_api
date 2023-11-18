@@ -29,8 +29,9 @@ model Coffee {
   description String?
   phone       String?
   address     String
-  latitude    Decimal
-  longitude   Decimal
+  image       String?
+  latitude    Float
+  longitude   Float
   created_at  DateTime @default(now())
 
   Review     Review[]

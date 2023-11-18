@@ -11,6 +11,7 @@ export class InMemoryCoffeesRepository implements CoffeesRepository {
       name: data.name,
       description: data!.description!,
       phone: data!.phone!,
+      image: data!.image!,
       address: data.address,
       latitude: data.latitude,
       longitude: data.longitude,
@@ -33,21 +34,21 @@ export class InMemoryCoffeesRepository implements CoffeesRepository {
 
   async findByName(coffeeName: string) {
     const coffee = this.items.find((item) => item.name === coffeeName)
-    
+
     if (!coffee) {
       return null
     }
-    
+
     return coffee
   }
 
   async findAll() {
     const coffees = this.items
-    
+
     if (!coffees) {
       return null
     }
-    
+
     return coffees
   }
 }

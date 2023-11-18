@@ -18,7 +18,7 @@ export class PrismaCoffeesRepository implements CoffeesRepository {
 
     return coffee
   }
-  
+
   async findByName(coffeeName: string) {
     const coffee = await prisma.coffee.findFirst({
       where: {

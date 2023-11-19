@@ -20,10 +20,11 @@ describe('Register Coffee Use Case', () => {
       name: 'The Coffee',
       description: 'Really cool open coffee',
       phone: '51 3040-4040',
+      image: '',
       address: 'Rua Felipe Camarão, 345',
       latitude: new Prisma.Decimal(10.456),
       longitude: new Prisma.Decimal(54.987),
-      isAdmin: true
+      isAdmin: true,
     })
 
     expect(coffee.id).toEqual(expect.any(String))
@@ -48,15 +49,13 @@ describe('Register Coffee Use Case', () => {
       name: 'The Coffee',
       description: 'Really cool open coffee',
       phone: '51 3040-4040',
+      image: '',
       address: 'Rua Felipe Camarão, 345',
       latitude: new Prisma.Decimal(10.456),
       longitude: new Prisma.Decimal(54.987),
-      isAdmin: user.isAdmin
+      isAdmin: user.isAdmin,
     })
 
     expect(coffee.id).toEqual(expect.any(String))
   })
-
-
-
 })

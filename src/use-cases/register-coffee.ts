@@ -1,5 +1,4 @@
 import { Coffee } from '@prisma/client'
-import { Decimal } from '@prisma/client/runtime/library'
 import { CoffeesRepository } from '@/repositories/coffee-repository'
 import { InvalidCredentialsError } from './errors/invalid-credentials-error'
 
@@ -9,8 +8,8 @@ interface RegisterCoffeeUseCaseProps {
   phone?: string
   address: string
   image: string
-  latitude: Decimal
-  longitude: Decimal
+  latitude: number
+  longitude: number
   isAdmin: boolean
 }
 interface RegisterCoffeeUseCaseResponse {

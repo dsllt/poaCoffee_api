@@ -8,6 +8,22 @@ export const app = fastify()
 
 app.register(appRoutes)
 
+app.addHook('onRequest', async (request, reply) => {
+  reply.header('Access-Control-Allow-Origin', '*')
+  reply.header('Access-Control-Allow-Credentials', true)
+  reply.header(
+    'Access-Control-Allow-Headers',
+    'Authorization, Origin, X-Requested-With, Content-Type, Accept, X-Slug, X-UID',
+  )
+  reply.header(
+    'Access-Control-Allow-Methods',
+    'OPTIONS, POST, PUT, PATCH, GET, DELETE',
+  )
+  if (request.method === 'OPTIONS') {
+    reply.send()
+  }
+})
+
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
     return reply

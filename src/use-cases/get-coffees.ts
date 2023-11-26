@@ -2,7 +2,6 @@ import { Coffee } from '@prisma/client'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
 import { CoffeesRepository } from '@/repositories/coffee-repository'
 
-
 interface GetCoffeesUseCaseResponse {
   coffees: Coffee[]
 }

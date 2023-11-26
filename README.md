@@ -13,9 +13,8 @@ Coffee locator application.
 - [x] Deve ser possível o visualizar todos cafés;
 - [x] Deve ser possível o buscar cafés pelo nome;
 
-- [ ] Deve ser possível o adicionar tipos de café à um café;
-- [ ] Deve ser possível o adicionar comidas à um café;
-// Analisar a o que já foi produzido na interface para ver como fazer essa requisição
+- [x] Deve ser possível o adicionar tipos de café à um café;
+- [x] Deve ser possível o adicionar comidas à um café;
 
 ## RNs (Regras de negócio)
 

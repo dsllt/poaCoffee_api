@@ -2,7 +2,6 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 import { makeRegisterCoffeeUseCase } from '@/use-cases/factories/make-register-coffee-use-case'
 import { CoffeeAlreadyExistsError } from '@/use-cases/errors/coffee-already-exists-error'
-import { Prisma } from '@prisma/client'
 
 export async function registerCoffee(
   request: FastifyRequest,
@@ -13,8 +12,8 @@ export async function registerCoffee(
     description: z.string(),
     phone: z.string(),
     address: z.string(),
-    latitude: z.instanceof(Prisma.Decimal),
-    longitude: z.instanceof(Prisma.Decimal),
+    latitude: z.number(),
+    longitude: z.number(),
     isAdmin: z.boolean(),
     image: z.string(),
   })

@@ -1,5 +1,5 @@
 import { ResourceNotFoundError } from '@/use-cases/errors/resource-not-found-error'
-import { makeGetCoffeesUseCase } from '@/use-cases/factories/make-get-coffeee-use-case'
+import { makeGetCoffeesUseCase } from '@/use-cases/factories/make-get-coffee-use-case'
 import { FastifyReply, FastifyRequest } from 'fastify'
 
 export async function getCoffees(request: FastifyRequest, reply: FastifyReply) {

@@ -1,14 +1,11 @@
 import { ResourceNotFoundError } from '@/use-cases/errors/resource-not-found-error'
-import { makeGetCoffeeUseCase } from '@/use-cases/factories/make-get-coffeees-use-case'
+import { makeGetCoffeeUseCase } from '@/use-cases/factories/make-get-coffees-use-case'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 
-export async function getCoffee(
-  request: FastifyRequest,
-  reply: FastifyReply,
-) {
+export async function getCoffee(request: FastifyRequest, reply: FastifyReply) {
   const getCoffeeBodySchema = z.object({
-    coffeeName: z.string()
+    coffeeName: z.string(),
   })
 
   const { coffeeName } = getCoffeeBodySchema.parse(request.body)

@@ -12,20 +12,24 @@ export async function registerCoffee(
     description: z.string(),
     phone: z.string(),
     address: z.string(),
+    imageUrl: z.string(),
     latitude: z.number(),
     longitude: z.number(),
+    rating: z.number(),
+    slug: z.string(),
     isAdmin: z.boolean(),
-    image: z.string(),
   })
   const {
     name,
+    imageUrl,
     description,
     phone,
     address,
     latitude,
     longitude,
+    rating,
+    slug,
     isAdmin,
-    image,
   } = registerCoffeeBodySchema.parse(request.body)
 
   try {
@@ -33,13 +37,15 @@ export async function registerCoffee(
 
     await registerCoffeeUseCase.execute({
       name,
+      imageUrl,
       description,
       phone,
       address,
       latitude,
       longitude,
+      rating,
+      slug,
       isAdmin,
-      image,
     })
   } catch (err) {
     console.log(err)

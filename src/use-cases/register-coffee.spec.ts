@@ -19,10 +19,12 @@ describe('Register Coffee Use Case', () => {
       name: 'The Coffee',
       description: 'Really cool open coffee',
       phone: '51 3040-4040',
-      image: '',
+      imageUrl: '',
       address: 'Rua Felipe Camarão, 345',
       latitude: 10.456,
       longitude: 54.987,
+      rating: 4.5,
+      slug: 'the-coffee',
       isAdmin: true,
     })
 
@@ -48,10 +50,12 @@ describe('Register Coffee Use Case', () => {
       name: 'The Coffee',
       description: 'Really cool open coffee',
       phone: '51 3040-4040',
-      image: '',
+      imageUrl: '',
       address: 'Rua Felipe Camarão, 345',
       latitude: 10.456,
       longitude: 54.987,
+      rating: 4.5,
+      slug: 'the-coffee',
       isAdmin: user.isAdmin,
     })
 

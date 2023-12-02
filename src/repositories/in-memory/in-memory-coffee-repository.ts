@@ -11,10 +11,12 @@ export class InMemoryCoffeesRepository implements CoffeesRepository {
       name: data.name,
       description: data!.description!,
       phone: data!.phone!,
-      image: data!.image!,
+      imageUrl: data!.imageUrl!,
       address: data.address,
       latitude: data.latitude,
       longitude: data.longitude,
+      rating: data!.rating!,
+      slug: data.slug,
       created_at: new Date(),
     }
     this.items.push(coffee)

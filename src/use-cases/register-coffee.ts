@@ -7,9 +7,11 @@ interface RegisterCoffeeUseCaseProps {
   description?: string
   phone?: string
   address: string
-  image: string
+  imageUrl: string
   latitude: number
   longitude: number
+  rating: number
+  slug: string
   isAdmin: boolean
 }
 interface RegisterCoffeeUseCaseResponse {
@@ -19,11 +21,14 @@ export class RegisterCoffeeUseCase {
   constructor(private coffeesRepository: CoffeesRepository) {}
   async execute({
     name,
+    imageUrl,
     description,
     phone,
     address,
     latitude,
     longitude,
+    rating,
+    slug,
     isAdmin,
   }: RegisterCoffeeUseCaseProps): Promise<RegisterCoffeeUseCaseResponse> {
     if (!isAdmin) {
@@ -31,11 +36,14 @@ export class RegisterCoffeeUseCase {
     }
     const coffee = await this.coffeesRepository.create({
       name,
+      imageUrl,
       description,
       phone,
       address,
       latitude,
       longitude,
+      rating,
+      slug,
     })
 
     return { coffee }

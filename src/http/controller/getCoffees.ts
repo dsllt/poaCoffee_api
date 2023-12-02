@@ -7,7 +7,7 @@ export async function getCoffees(request: FastifyRequest, reply: FastifyReply) {
     const getCoffeesUseCase = makeGetCoffeesUseCase()
 
     const coffees = await getCoffeesUseCase.execute()
-    return reply.status(200).send({ coffees })
+    return reply.status(200).send(coffees)
   } catch (err) {
     console.log(err)
     if (err instanceof ResourceNotFoundError) {
